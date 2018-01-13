@@ -106,12 +106,14 @@
 	      secs = timeSeconds.getTime();
 
 	      if (count == 0) {
-	         document.BEATSPERMINUTE.AVG.value = "Begin When Ready";
+	         document.getElementById("#bpm-here").innherHTML = "Begin When Ready";
+	         // document.BEATSPERMINUTE.AVG.value = "Begin When Ready";
 	         document.BEATSPERMINUTE.HIT.value = "";
 	         document.BEATSPERMINUTE.ACG.value = "";
 	         count = "start"
 	      } else if (count == "start"){
-	         document.BEATSPERMINUTE.AVG.value = "1st Click";
+	         document.getElementById("#bpm-here").innherHTML = "1st Click";
+	         // document.BEATSPERMINUTE.AVG.value = "1st Click";
 	         document.BEATSPERMINUTE.HIT.value = "";
 	         document.BEATSPERMINUTE.ACG.value = "";
 	         count = 1
@@ -136,7 +138,8 @@
 	         } else {
 	            PavgChg = avgChg
 	         }
-	         document.BEATSPERMINUTE.AVG.value = (Math.round(avgBpm * 100)) / 100;
+	         document.getElementById("#bpm-here").innherHTML = (Math.round(avgBpm * 100)) / 100;
+	         // document.BEATSPERMINUTE.AVG.value = (Math.round(avgBpm * 100)) / 100;
 	         document.BEATSPERMINUTE.ACG.value = PavgChg;
 	         document.BEATSPERMINUTE.HIT.value = count;
 	      }
@@ -194,6 +197,7 @@
 			height: 100%;
 			text-align: center;
 			background: #fff;
+			padding-top: 10%;
 		}
 
 		.bpm-instruction {
@@ -202,6 +206,11 @@
 			xleft: 0%;
 			font-size: 10em;
 			margin: 0;
+		}
+
+		#bpm-here {
+			width: 10em;
+			border: 1px solid #eee;
 		}
 
 		.noborders {
@@ -230,7 +239,8 @@
 		</p>
 		<p class="bpm-data">
 			<form name="BEATSPERMINUTE">
-				BPM: <input size="14" name="AVG" readonly="readonly">
+				BPM: <span id="#bpm-here"></span>
+				<!-- <input size="14" name="AVG" readonly="readonly"> -->
 				&nbsp;
 				<span name="bpm-reset" onClick="resetAll()" class="bpm-clear">X</span>
 				<br>
