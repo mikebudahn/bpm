@@ -3,28 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<!-- * -->
-	<!-- HTML VER 20180113-1616 -->
+	<!-- HTML VER 20180114-1030 -->
 	<!-- * -->
-	<script Language='VBScript'>
-	   Sub setBPM(value,skip)
-	      Dim SDB : Set SDB = CreateObject("SongsDB.SDBApplication")
-	      Dim curSong : Set curSong = SDB.Player.CurrentSong
-
-	      curSong.BPM = value
-	      curSong.UpdateDB
-	      curSong.WriteTags
-
-	      If skip Then
-	           SDB.Player.Next()
-	         SDB.Player.PlaybackTime = SDB.Player.CurrentSongLength*0.1
-	      End If
-
-	      Set curSong = Nothing
-	      Set SDB = Nothing
-	   End Sub
-	</script>
-
-
 	<script language=JavaScript>
 	   <!-- Original:  Derek Chilcote-Batto (dac-b@usa.net) -->
 	   <!-- Web Site:  http://www.mixed.net -->
@@ -35,7 +15,7 @@
 	   <!-- Netscape 4.x+ and MSIE 4.x+ compatible. -->
 	   //
 	   // Modified by: Mike Budahn
-	   // https://github.com/mikebudahn/bpm/blob/master/bpm.html
+	   // https://github.com/mikebudahn/bpm
 	   // 2017-11-12
 
 
